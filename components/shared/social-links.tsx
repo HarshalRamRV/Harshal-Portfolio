@@ -14,12 +14,7 @@ const links = [
     name: "LinkedIn",
     href: personalInfo.social.linkedin,
     icon: Linkedin,
-  },
-  {
-    name: "Email",
-    href: `mailto:${personalInfo.email}`,
-    icon: Mail,
-  },
+  }
 ];
 
 interface SocialLinksProps {
