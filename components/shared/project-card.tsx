@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Calendar, Bot, Database, Shield, Blocks, Code2 } from "lucide-react";
+import { ExternalLink, Github, Calendar, Bot, Database, MessageSquare, Cpu, Code2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -13,16 +13,16 @@ interface ProjectCardProps {
 }
 
 const projectIcons: Record<string, React.ReactNode> = {
+  "query-llm": (
+    <>
+      <MessageSquare className="h-12 w-12 text-primary" />
+      <Cpu className="h-8 w-8 text-secondary absolute bottom-4 right-4" />
+    </>
+  ),
   "salessense-ai": (
     <>
       <Bot className="h-12 w-12 text-primary" />
       <Database className="h-8 w-8 text-secondary absolute bottom-4 right-4" />
-    </>
-  ),
-  "evault": (
-    <>
-      <Shield className="h-12 w-12 text-primary" />
-      <Blocks className="h-8 w-8 text-secondary absolute bottom-4 right-4" />
     </>
   ),
 };
@@ -30,12 +30,14 @@ const projectIcons: Record<string, React.ReactNode> = {
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <motion.div
+      className="h-full"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <motion.div
+        className="h-full"
         whileHover={{ y: -8 }}
         transition={{ duration: 0.2 }}
       >

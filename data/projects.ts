@@ -14,13 +14,39 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "query-llm",
+    title: "Query LLM",
+    subtitle: "AI-Powered Chat Application",
+    description:
+      "Full-stack AI chat application with real-time streaming, multi-LLM support (OpenAI & Anthropic), tool orchestration, and a stateless AI server architecture.",
+    longDescription:
+      "Built a full-stack AI chat platform featuring a Next.js frontend, a RESTful Node.js/Express API backend, and a dedicated AI server. The AI server supports dual transport (custom SSE and Vercel AI SDK Data Stream Protocol), typed stream events, and a tool registry with Zod-validated parameters. Integrates OpenAI and Anthropic models with Firebase Auth for authentication and PostgreSQL/Prisma for persistence.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma",
+      "Firebase Auth",
+      "Vercel AI SDK",
+      "OpenAI",
+      "Anthropic",
+      "TailwindCSS",
+      "shadcn/ui",
+    ],
+    liveUrl: "https://query-llm-frontend.vercel.app/",
+    featured: true,
+    date: "2025",
+  },
+  {
     id: "salessense-ai",
     title: "SalesSense-AI",
     subtitle: "Text-to-SQL Analytics Platform",
     description:
-      "AI-driven customer support chatbot that utilizes Gemini-1.5-Flash to interpret user inputs and generate SQL queries for fetching relevant sales data.",
+      "AI-driven analytics chatbot that uses Gemini-1.5-Flash to convert natural language questions into SQL queries, fetching sales insights from a structured database.",
     longDescription:
-      "Created an AI-driven customer support chatbot that utilizes the Gemini-1.5-Flash to interpret user inputs and generate SQL queries for fetching relevant sales data. It uses the generated SQL queries to fetch data from the database and deliver accurate, contextually relevant responses to queries.",
+      "Built an AI-driven customer support and analytics chatbot powered by Gemini-1.5-Flash. The system interprets natural language user inputs, generates precise SQL queries, and executes them against a SQLite database to surface accurate sales insights. Features a React-based conversational UI with a Node.js/Express backend, enabling non-technical users to query sales data without writing a single line of SQL.",
     technologies: [
       "React.js",
       "Vite",
@@ -33,18 +59,5 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/HarshalRamRV/SalesSense-AI",
     featured: true,
     date: "Aug 2024 – Sep 2024",
-  },
-  {
-    id: "evault",
-    title: "Evault",
-    subtitle: "Secure Decentralized File Storage",
-    description:
-      "Blockchain-based file storage application using smart contracts and IPFS for decentralized, secure file management on the Ethereum blockchain.",
-    longDescription:
-      "Implemented smart contracts in Solidity to oversee file uploads and manage access controls, ensuring secure and transparent interactions among users on the Ethereum blockchain. Leveraged the InterPlanetary File System (IPFS) for decentralized file storage.",
-    technologies: ["React", "Solidity", "Ethereum", "IPFS"],
-    githubUrl: "https://github.com/HarshalRamRV/Project-eVault",
-    featured: true,
-    date: "Sep 2023 - Oct 2023",
   },
 ];

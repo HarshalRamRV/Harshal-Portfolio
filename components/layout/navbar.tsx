@@ -4,8 +4,7 @@ import * as React from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "./theme-toggle";
-import { navLinks, personalInfo } from "@/data/personal";
+import { navLinks } from "@/data/personal";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
@@ -67,12 +66,10 @@ export function Navbar() {
                 {link.name}
               </motion.button>
             ))}
-            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
