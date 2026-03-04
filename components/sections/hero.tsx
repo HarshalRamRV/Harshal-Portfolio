@@ -9,7 +9,7 @@ import { FloatingShapes } from "@/components/animations/floating-shapes";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import { personalInfo } from "@/data/personal";
 
-const RESUME_URL = "/resume/Resume_HarshalRamRV.docx.pdf";
+const RESUME_URL = "/resume/Resume_HarshalRamRV.pdf";
 
 const roles = [
   "Full-Stack Developer",
