@@ -47,8 +47,8 @@ export function Hero() {
       <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_45%_35%_at_50%_85%,rgba(34,197,94,0.1)_0%,transparent_60%)]" />
       <div className="absolute inset-0 z-[1] bg-black/45" />
 
-      <div className="relative z-[2] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="relative z-[2] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 lg:gap-16">
           {/* Profile Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -56,7 +56,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="shrink-0"
           >
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64">
+            <div className="relative w-32 h-32 sm:w-44 sm:h-44 lg:w-64 lg:h-64">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-accent p-1">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image
@@ -90,7 +90,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-3"
+              className="text-3xl sm:text-5xl lg:text-7xl font-bold mb-2 sm:mb-3"
             >
               <span className="gradient-text">{personalInfo.name}</span>
             </motion.h1>
@@ -100,7 +100,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-xl sm:text-2xl lg:text-3xl font-medium text-primary mb-4 h-10"
+              className="text-lg sm:text-2xl lg:text-3xl font-medium text-primary mb-3 h-8 sm:h-10"
             >
               <span>{text}</span>
               <span className="animate-pulse">|</span>
@@ -111,7 +111,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg lg:text-xl text-muted-foreground max-w-xl mb-8"
+              className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-xl mb-6 sm:mb-8"
             >
               {personalInfo.tagline}
             </motion.p>
@@ -121,22 +121,22 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8"
+              className="flex flex-row justify-center lg:justify-start gap-3 mb-6 sm:mb-8"
             >
               <Button
-                size="lg"
+                size="default"
                 onClick={() => handleScrollToSection("#projects")}
                 className="group relative overflow-hidden"
               >
-                <span className="relative z-10 flex items-center">
+                <span className="relative z-10 flex items-center text-sm sm:text-base">
                   View Projects
-                  <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+                  <ArrowDown className="ml-2 h-3.5 w-3.5 group-hover:translate-y-1 transition-transform" />
                 </span>
               </Button>
-              <Button size="lg" variant="outline" className="group" asChild>
-                <a href={RESUME_URL} download className="inline-flex items-center whitespace-nowrap">
-                  <Download className="mr-2 h-4 w-4 shrink-0 group-hover:translate-y-0.5 transition-transform" />
-                  Download Resume
+              <Button size="default" variant="outline" className="group" asChild>
+                <a href={RESUME_URL} download className="inline-flex items-center whitespace-nowrap text-sm sm:text-base">
+                  <Download className="mr-2 h-3.5 w-3.5 shrink-0 group-hover:translate-y-0.5 transition-transform" />
+                  Resume
                 </a>
               </Button>
             </motion.div>
