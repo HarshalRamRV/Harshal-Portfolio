@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, MapPin, Sparkles } from "lucide-react";
+import { ArrowDown, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SocialLinks } from "@/components/shared/social-links";
 import { useTypewriter } from "@/hooks/use-typewriter";
@@ -49,29 +49,29 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-y-0 left-0 z-[1] w-full lg:w-[68%] bg-[linear-gradient(90deg,rgba(2,6,23,0.74)_0%,rgba(2,6,23,0.56)_32%,rgba(2,6,23,0.22)_72%,transparent_100%)]" />
       <div className="pointer-events-none absolute inset-y-0 right-[-10%] z-[1] hidden lg:block w-[45vw] bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.16),transparent_64%)] blur-3xl" />
 
-      <div className="relative z-[2] mx-auto flex w-full items-center px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div className="relative z-[2] mx-auto flex w-full items-center px-5 pt-24 pb-24 sm:px-6 sm:pt-28 sm:pb-16 lg:px-8 lg:pt-24 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 24, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="relative mx-auto w-full max-w-[1380px] lg:w-[72vw]"
+          className="relative mx-auto w-full max-w-[1580px] lg:w-[88vw]"
         >
-          <div className="absolute -inset-6 rounded-[2.75rem] bg-[radial-gradient(circle_at_18%_28%,rgba(59,130,246,0.2),transparent_28%),radial-gradient(circle_at_82%_54%,rgba(14,165,233,0.16),transparent_32%)] blur-3xl opacity-90" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/26 px-5 py-6 shadow-[0_40px_100px_rgba(2,6,23,0.5)] backdrop-blur-xl sm:px-7 sm:py-8 lg:px-12 lg:py-10">
-            <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),transparent_28%,rgba(37,99,235,0.08)_100%)]" />
-            <div className="relative grid items-center gap-10 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[320px_minmax(0,1fr)] xl:gap-14">
-              <div className="relative flex justify-center lg:justify-start">
-                <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.3),transparent_66%)] blur-3xl opacity-80" />
-                <div className="relative py-2 lg:py-4">
-                  <div className="mx-auto relative h-40 w-40 sm:h-52 sm:w-52 lg:h-72 lg:w-72">
-                    <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-primary via-secondary to-accent opacity-95 blur-[1px]" />
-                    <div className="relative h-full w-full rounded-full border border-white/10 p-1.5">
+          <div className="absolute -inset-8 rounded-[3rem] bg-[radial-gradient(circle_at_18%_28%,rgba(59,130,246,0.2),transparent_28%),radial-gradient(circle_at_82%_54%,rgba(14,165,233,0.16),transparent_32%)] blur-3xl opacity-50" />
+          <div className="relative overflow-hidden rounded-[2.25rem] border border-white/10 bg-slate-950/8 px-5 py-10 pb-14 shadow-[0_40px_100px_rgba(2,6,23,0.5)] backdrop-blur-sm sm:px-10 sm:py-16 sm:pb-16 lg:px-16 lg:py-24 min-h-0 sm:min-h-[500px] lg:min-h-[580px] xl:min-h-[640px]">
+            <div className="absolute inset-0 bg-[linear-gradient(145deg,rgba(255,255,255,0.03),transparent_28%,rgba(37,99,235,0.03)_100%)]" />
+            <div className="relative grid items-center gap-6 sm:gap-10 lg:grid-cols-[1fr_minmax(0,1.4fr)] lg:gap-14 xl:gap-16">
+              <div className="relative flex justify-center lg:justify-center">
+                <div className="absolute inset-0 rounded-[2.25rem] bg-[radial-gradient(circle_at_50%_30%,rgba(59,130,246,0.3),transparent_66%)] blur-3xl opacity-40 pointer-events-none" />
+                <div className="relative flex items-center justify-center py-2 sm:py-6 lg:py-8">
+                  <div className="relative h-40 w-40 sm:h-56 sm:w-56 lg:h-72 lg:w-72 xl:h-[22rem] xl:w-[22rem]">
+                    <div className="absolute -inset-0.5 rounded-full bg-gradient-to-br from-primary via-secondary to-accent opacity-90 blur-[1px]" />
+                    <div className="relative h-full w-full rounded-full border border-white/10 p-0.5">
                       <div className="h-full w-full overflow-hidden rounded-full">
                         <Image
                           src="/images/profile.jpeg"
                           alt={personalInfo.name}
-                          width={256}
-                          height={256}
+                          width={320}
+                          height={320}
                           className="h-full w-full object-cover"
                           priority
                         />
@@ -81,26 +81,22 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="relative mx-auto w-full max-w-[760px] lg:mx-0">
+              <div className="relative mx-auto w-full max-w-[860px] lg:mx-0">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 lg:justify-start"
+                  className="mb-2 sm:mb-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 lg:justify-start"
                 >
-                  <Sparkles className="h-5 w-5 text-primary" />
-                  <p className="text-lg text-white/82">Hi, I&apos;m</p>
-                  <span className="inline-flex items-center gap-2 text-sm text-cyan-100/70">
-                    <MapPin className="h-4 w-4" />
-                    {personalInfo.location}
-                  </span>
+                  <Sparkles className="h-5 w-5 text-sky-400" />
+                  <p className="text-lg text-slate-200/95">Hi, I&apos;m</p>
                 </motion.div>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="mb-4 text-center text-[clamp(3.4rem,5vw,5.6rem)] font-bold leading-[0.9] tracking-[-0.06em] lg:text-left"
+                  className="mb-3 sm:mb-4 text-center text-[clamp(2.5rem,8vw,5.6rem)] font-bold leading-[0.95] tracking-[-0.06em] lg:text-left"
                 >
                   <span className="gradient-text">{personalInfo.name}</span>
                 </motion.h1>
@@ -109,22 +105,22 @@ export function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="min-h-[2.5rem] text-center text-2xl font-medium text-primary/95 sm:min-h-[3rem] sm:text-3xl lg:text-left lg:text-[2.35rem]"
+                  className="min-h-[2rem] sm:min-h-[3rem] text-center text-xl font-medium text-sky-100 sm:text-3xl lg:text-left lg:text-[2.35rem]"
                 >
                   <span>{text}</span>
-                  <span className="animate-pulse">|</span>
+                  <span className="animate-pulse text-sky-300">|</span>
                 </motion.div>
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start"
+                  className="mt-6 sm:mt-8 flex flex-col items-center gap-3 sm:gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start"
                 >
                   <Button
                     size="lg"
                     onClick={() => handleScrollToSection("#projects")}
-                    className="group relative min-w-[210px] overflow-hidden border border-primary/30 bg-[linear-gradient(90deg,rgba(99,102,241,0.92)_0%,rgba(37,99,235,0.96)_55%,rgba(14,165,233,0.92)_100%)] text-white shadow-[0_18px_45px_rgba(37,99,235,0.38)] hover:scale-[1.02] hover:shadow-[0_22px_55px_rgba(37,99,235,0.45)]"
+                    className="group relative w-full sm:min-w-[210px] sm:w-auto overflow-hidden border border-primary/30 bg-[linear-gradient(90deg,rgba(99,102,241,0.92)_0%,rgba(37,99,235,0.96)_55%,rgba(14,165,233,0.92)_100%)] text-white shadow-[0_18px_45px_rgba(37,99,235,0.38)] hover:scale-[1.02] hover:shadow-[0_22px_55px_rgba(37,99,235,0.45)]"
                   >
                     <span className="relative z-10 flex items-center text-sm sm:text-base">
                       View Projects
@@ -134,7 +130,7 @@ export function Hero() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="group min-w-[200px] border-white/16 bg-white/5 text-white/82 shadow-[0_16px_36px_rgba(2,6,23,0.22)] hover:border-white/28 hover:bg-white/10 hover:text-white"
+                    className="group w-full sm:min-w-[200px] sm:w-auto border-sky-500/20 bg-sky-950/30 text-slate-200 shadow-[0_16px_36px_rgba(2,6,23,0.22)] hover:border-sky-400/30 hover:bg-sky-900/25 hover:text-sky-50"
                     asChild
                   >
                     <a
