@@ -18,9 +18,9 @@ export const projects: Project[] = [
     title: "Query LLM",
     subtitle: "AI-Powered Chat Application",
     description:
-      "Full-stack AI chat application with real-time streaming, multi-LLM support (OpenAI & Anthropic), tool orchestration, and a stateless AI server architecture.",
+      "Full-stack AI chat application with real-time streaming, tool orchestration, and a stateless AI server architecture.",
     longDescription:
-      "Built a full-stack AI chat platform featuring a Next.js frontend, a RESTful Node.js/Express API backend, and a dedicated AI server. The AI server supports dual transport (custom SSE and Vercel AI SDK Data Stream Protocol), typed stream events, and a tool registry with Zod-validated parameters. Integrates OpenAI and Anthropic models with Firebase Auth for authentication and PostgreSQL/Prisma for persistence.",
+      "Built a full-stack AI chat platform featuring a Next.js frontend, a RESTful Node.js/Express API backend, and a dedicated AI server. The AI server supports dual transport (custom SSE and Vercel AI SDK Data Stream Protocol), typed stream events, and a tool registry with Zod-validated parameters. Integrates Firebase Auth for authentication and PostgreSQL/Prisma for persistence.",
     technologies: [
       "Next.js",
       "TypeScript",
@@ -30,8 +30,6 @@ export const projects: Project[] = [
       "Prisma",
       "Firebase Auth",
       "Vercel AI SDK",
-      "OpenAI",
-      "Anthropic",
       "TailwindCSS",
       "shadcn/ui",
     ],

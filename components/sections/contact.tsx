@@ -8,7 +8,6 @@ import { z } from "zod";
 import {
   Send,
   Mail,
-  Phone,
   MapPin,
   Github,
   Linkedin,
@@ -37,12 +36,6 @@ const contactInfo = [
     label: "Email",
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: personalInfo.phone,
-    href: `tel:${personalInfo.phone}`,
   },
   {
     icon: MapPin,
