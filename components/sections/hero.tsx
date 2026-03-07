@@ -1,13 +1,18 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SocialLinks } from "@/components/shared/social-links";
-import { FloatingShapes } from "@/components/animations/floating-shapes";
 import { useTypewriter } from "@/hooks/use-typewriter";
 import { personalInfo } from "@/data/personal";
+
+const VantaBackground = dynamic(
+  () => import("@/components/animations/vanta-background").then((m) => ({ default: m.VantaBackground })),
+  { ssr: false }
+);
 
 const RESUME_URL = "/resume/Resume_HarshalRamRV.pdf";
 
@@ -34,82 +39,15 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background hero-mesh">
-      {/* Topography pattern overlay */}
-      <div className="absolute inset-0 pattern-topography opacity-60" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <VantaBackground />
+      {/* Gradient overlays — site palette */}
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_70%_55%_at_15%_50%,rgba(99,102,241,0.22)_0%,transparent_65%)]" />
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_55%_45%_at_85%_35%,rgba(14,165,233,0.18)_0%,transparent_65%)]" />
+      <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_45%_35%_at_50%_85%,rgba(34,197,94,0.1)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 z-[1] bg-black/45" />
 
-      {/* Base grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.3)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.3)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black_40%,transparent_100%)]" />
-
-      {/* Animated aurora effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-1/2 -left-1/4 w-full h-full bg-gradient-to-r from-primary/20 via-secondary/20 to-transparent blur-[100px] rotate-12"
-        />
-        <motion.div
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 50, 0],
-            scale: [1.2, 1, 1.2],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-gradient-to-l from-secondary/20 via-primary/20 to-transparent blur-[100px] -rotate-12"
-        />
-      </div>
-
-      {/* Glowing orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.6, 0.4] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-primary/30 blur-[120px]"
-        />
-        <motion.div
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-secondary/30 blur-[100px]"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-radial from-primary/10 via-secondary/5 to-transparent blur-[80px]"
-        />
-      </div>
-
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              y: [-20, 20, -20],
-              x: [-10, 10, -10],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 5 + i * 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5,
-            }}
-            className="absolute w-2 h-2 rounded-full bg-primary/50"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-          />
-        ))}
-      </div>
-
-      <FloatingShapes />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-[2] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Profile Photo */}
           <motion.div
@@ -144,9 +82,7 @@ export function Hero() {
               className="flex items-center justify-center lg:justify-start gap-2 mb-2"
             >
               <Sparkles className="h-5 w-5 text-primary" />
-              <p className="text-lg text-muted-foreground">
-                Hi, I'm
-              </p>
+              <p className="text-lg text-muted-foreground">Hi, I&apos;m</p>
             </motion.div>
 
             {/* Name */}
@@ -216,7 +152,6 @@ export function Hero() {
             </motion.div>
           </div>
         </div>
-
       </div>
     </section>
   );
