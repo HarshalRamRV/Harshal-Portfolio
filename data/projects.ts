@@ -42,7 +42,7 @@ export const projects: Project[] = [
     title: "SalesSense-AI",
     subtitle: "Text-to-SQL Analytics Platform",
     description:
-      "AI-driven analytics chatbot that uses Gemini-1.5-Flash to convert natural language questions into SQL queries, fetching sales insights from a structured database.",
+      "AI-driven analytics chatbot that converts natural language questions into SQL queries, fetching sales insights from a database.",
     longDescription:
       "Built an AI-driven customer support and analytics chatbot powered by Gemini-1.5-Flash. The system interprets natural language user inputs, generates precise SQL queries, and executes them against a SQLite database to surface accurate sales insights. Features a React-based conversational UI with a Node.js/Express backend, enabling non-technical users to query sales data without writing a single line of SQL.",
     technologies: [

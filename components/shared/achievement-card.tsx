@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Award, Medal } from "lucide-react";
 
 interface AchievementCardProps {
   title: string;
@@ -11,37 +10,25 @@ interface AchievementCardProps {
   index: number;
 }
 
-const iconMap: Record<string, React.ReactNode> = {
-  trophy: <Trophy className="h-6 w-6" />,
-  award: <Award className="h-6 w-6" />,
-  medal: <Medal className="h-6 w-6" />,
-};
-
-export function AchievementCard({
-  title,
-  description,
-  period,
-  icon,
-  index,
-}: AchievementCardProps) {
+export function AchievementCard({ title, description, period, index }: AchievementCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
-      whileHover={{ scale: 1.03, y: -4 }}
-      className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all"
+      transition={{ duration: 0.4, delay: index * 0.07 }}
+      className="group grid sm:grid-cols-[auto_1fr] gap-6 py-8 border-b border-border last:border-0"
     >
-      <div className="flex items-start gap-4">
-        <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary shrink-0">
-          {iconMap[icon] || <Trophy className="h-6 w-6" />}
-        </div>
-        <div>
-          <h3 className="font-semibold text-lg">{title}</h3>
-          <p className="text-muted-foreground mt-1">{description}</p>
-          <p className="text-sm text-primary mt-2">{period}</p>
-        </div>
+      <span className="hidden sm:block text-4xl font-bold text-border group-hover:text-primary/20 transition-colors duration-300 leading-none pt-1 select-none tabular-nums">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+
+      <div className="space-y-1">
+        <h3 className="font-semibold text-lg leading-tight group-hover:text-primary transition-colors duration-200">
+          {title}
+        </h3>
+        <p className="text-sm text-muted-foreground">{description}</p>
+        <p className="text-xs font-mono text-primary/70 pt-1">{period}</p>
       </div>
     </motion.div>
   );

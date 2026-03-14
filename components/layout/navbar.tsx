@@ -42,14 +42,12 @@ export function Navbar() {
           <motion.a
             href="#"
             className="group flex items-center gap-1.5"
-            whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
             <span className="text-xl font-bold tracking-tight">
               <span className="text-primary">H</span>
-              <span className="text-foreground">arshal</span>
+              <span className="text-white/90">arshal</span>
             </span>
-            <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary group-hover:animate-pulse" />
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -61,7 +59,7 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => handleNavClick(link.href)}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted"
+                className="relative px-4 py-2 text-sm font-medium text-white/70 hover:text-white transition-colors duration-200 outline-none focus-visible:outline-none after:absolute after:bottom-0 after:left-4 after:right-4 after:h-px after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200 after:origin-left"
               >
                 {link.name}
               </motion.button>
@@ -99,7 +97,7 @@ export function Navbar() {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                className="block w-full text-left px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
               >
                 {link.name}
               </button>

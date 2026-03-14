@@ -14,36 +14,25 @@ export function SectionTitle({
   title,
   subtitle,
   className,
-  align = "center",
+  align = "left",
 }: SectionTitleProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
       className={cn(
-        "mb-12",
+        "mb-14",
         align === "center" ? "text-center" : "text-left",
         className
       )}
     >
-      <h2 className="text-3xl sm:text-4xl font-bold">{title}</h2>
+      <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">{title}</h2>
       {subtitle && (
-        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-          {subtitle}
-        </p>
+        <p className="mt-3 text-muted-foreground">{subtitle}</p>
       )}
-      <motion.div
-        initial={{ width: 0 }}
-        whileInView={{ width: align === "center" ? "6rem" : "4rem" }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className={cn(
-          "h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4",
-          align === "center" ? "mx-auto" : ""
-        )}
-      />
+      <div className="h-px bg-border mt-8" />
     </motion.div>
   );
 }

@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import WAVES from "vanta/dist/vanta.waves.min";
 
-type VantaWaveEffect = {
+type VantaEffect = {
   destroy: () => void;
   resize?: () => void;
 };
@@ -15,7 +15,7 @@ type ThreeWindow = Window & {
 
 export function HeroBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const effectRef = useRef<VantaWaveEffect | null>(null);
+  const effectRef = useRef<VantaEffect | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -36,12 +36,12 @@ export function HeroBackground() {
       minWidth: 200,
       scale: 1,
       scaleMobile: 1,
-      color: 0x1d4ed8,
-      backgroundColor: 0x020617,
-      shininess: 28,
+      color: 0x3d2200,
+      backgroundColor: 0x07090c,
+      shininess: 30,
       waveHeight: 18,
-      waveSpeed: 0.85,
-      zoom: 0.82,
+      waveSpeed: 0.7,
+      zoom: 0.85,
     });
 
     const handleResize = () => {
@@ -52,7 +52,11 @@ export function HeroBackground() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      effectRef.current?.destroy();
+      try {
+        effectRef.current?.destroy();
+      } catch (_) {
+        // Vanta removeChild race on unmount
+      }
       effectRef.current = null;
     };
   }, []);
@@ -61,7 +65,7 @@ export function HeroBackground() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className="absolute inset-0 [filter:saturate(0.72)_brightness(0.58)_contrast(1.08)]"
+      className="absolute inset-0 [filter:brightness(0.9)_saturate(1.1)_contrast(1.0)]"
     />
   );
 }

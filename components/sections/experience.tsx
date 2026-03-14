@@ -8,7 +8,7 @@ import { experiences } from "@/data/experience";
 
 export function Experience() {
   return (
-    <SectionWrapper id="experience" className="section-gradient-alt dot-pattern">
+    <SectionWrapper id="experience" className="dot-pattern">
       <SectionTitle
         title="Experience"
         subtitle="My professional journey so far"

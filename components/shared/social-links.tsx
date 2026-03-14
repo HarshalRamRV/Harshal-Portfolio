@@ -46,7 +46,7 @@ export function SocialLinks({ size = "md", showLabels = false }: SocialLinksProp
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 + index * 0.1 }}
-          whileHover={{ scale: 1.04, y: -3 }}
+          whileHover={{ y: -3 }}
           whileTap={{ scale: 0.95 }}
           className={`${containerSizes[size]} flex items-center gap-2 rounded-xl border border-white/10 bg-slate-950/45 text-white/78 shadow-[0_18px_40px_rgba(2,6,23,0.28)] backdrop-blur-md transition-all duration-300 hover:border-primary/35 hover:bg-primary/15 hover:text-white`}
         >

@@ -97,11 +97,8 @@ export function Contact() {
   };
 
   return (
-    <SectionWrapper id="contact" className="section-mesh grid-pattern">
-      <SectionTitle
-        title="Get In Touch"
-        subtitle="Have a project in mind? Let's work together!"
-      />
+    <SectionWrapper id="contact" className="dot-pattern">
+      <SectionTitle title="Get In Touch" />
 
       <div className="grid lg:grid-cols-2 gap-12">
         {/* Contact Form */}
@@ -172,7 +169,7 @@ export function Contact() {
                 </>
               ) : (
                 <>
-                  <Send className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  <Send className="mr-2 h-4 w-4" />
                   Send Message
                 </>
               )}
@@ -212,81 +209,48 @@ export function Contact() {
           className="space-y-8"
         >
           <div>
-            <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-            <p className="text-muted-foreground mb-6">
-              Feel free to reach out through any of these channels. I typically
-              respond within 24 hours.
-            </p>
+            {contactInfo.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.07 }}
+                className="py-6 border-b border-border last:border-0"
+              >
+                <div className="space-y-0.5">
+                  <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest">{item.label}</p>
+                  {item.href ? (
+                    <a href={item.href} className="font-medium hover:text-primary transition-colors">
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="font-medium">{item.value}</p>
+                  )}
+                </div>
+              </motion.div>
+            ))}
 
-            <div className="space-y-4">
-              {contactInfo.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-4"
-                >
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                    <item.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="font-medium hover:text-primary transition-colors"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="font-medium">{item.value}</p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Connect with me</h3>
-            <div className="flex gap-4">
+            <div className="pt-8 flex gap-4">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="p-4 rounded-xl bg-card border border-border hover:border-primary/50 hover:bg-primary/5 transition-all"
+                  transition={{ delay: index * 0.07 }}
+                  className="text-muted-foreground hover:text-primary transition-colors"
                 >
-                  <link.icon className="h-6 w-6" />
+                  <link.icon className="h-5 w-5" />
                   <span className="sr-only">{link.label}</span>
                 </motion.a>
               ))}
             </div>
           </div>
 
-          {/* Fun Fact */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="p-6 rounded-xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 border border-primary/20"
-          >
-            <p className="text-sm text-muted-foreground">
-              💡 <strong className="text-foreground">Fun fact:</strong> I'm always
-              exploring new AI technologies and love building intelligent
-              applications that make a real impact!
-            </p>
-          </motion.div>
         </motion.div>
       </div>
     </SectionWrapper>
