@@ -59,7 +59,7 @@ const experience = [
     role: "MERN Stack Developer",
     company: "BlockSurvey Technologies \u00b7 Bangalore",
     description:
-      "Shipped an MVP social app with user profiles and interactive feeds for photo, audio, and video posts, then implemented REST APIs for registration, authentication, and post management.",
+      "Shipped an MVP social media app with user profiles and interactive feeds for photo, audio, and video posts, then implemented REST APIs for registration, authentication, and post management.",
   },
 ];
 
@@ -89,7 +89,7 @@ const skillGroups = [
   { label: "Frontend", items: ["Next.js", "React.js", "React Query"] },
   { label: "Backend", items: ["Node.js", "Express", "MongoDB", "Firebase"] },
   { label: "DevOps", items: ["Linux", "Git \u00b7 GitHub", "Render"] },
-  { label: "Gen-AI", items: ["Cursor", "Codex", "Claude Code"] },
+  { label: "Gen-AI Tools", items: ["Codex", "Claude Code"] },
 ];
 
 function SectionKicker({
